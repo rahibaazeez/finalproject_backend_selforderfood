@@ -1,8 +1,11 @@
 <?php
 include "connection.php";
 $id=$_GET['id'];
-$data=mysqli_query($conn,"SELECT food_order.id,food_details.photo,food_details.food_name,food_details.preparationtime,food_details.price,food_details.ingredients FROM food_order INNER JOIN food_details ON food_order.food_id=food_details.food_id WHERE id='$id'");
 
+$data=mysqli_query($conn,"SELECT food_order.id,food_details.photo,food_details.food_name,food_details.preparationtime,food_details.price,food_details.ingredients FROM food_order INNER JOIN food_details ON food_order.food_id=food_details.food_id WHERE id='$id'");
+if(isset($_POST['submit'])){
+  $sql1=mysqli_query($conn,"INSERT INTO  message (notificatio,oreder_id,id) VALUES ")
+}
 ?>
 
 
@@ -120,6 +123,7 @@ $data=mysqli_query($conn,"SELECT food_order.id,food_details.photo,food_details.f
     <p class="card-text"><?php echo $row['preparationtime'];?></p>
     <strong>Price</strong>
     <p class="card-text"><?php echo $row['price'];?></p>
+    <button type="submit" name="submit" class="btn btn-primary">Submit </button>
     
   </div>
 </div>

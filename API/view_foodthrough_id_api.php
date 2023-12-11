@@ -1,4 +1,5 @@
 <?php
+header("Content-Type: application/json");
 $conn=mysqli_connect('localhost','root','','self_orderfood');
 if(mysqli_connect_errno()){
     die('Connection Unsucessful');

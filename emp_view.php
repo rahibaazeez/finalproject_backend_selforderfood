@@ -1,6 +1,6 @@
 <?php
 include "connection.php";
-$data=mysqli_query($conn,"SELECT * FROM food_details");
+$data=mysqli_query($conn,"SELECT * FROM food_details ");
 ?>
 
 
@@ -72,8 +72,8 @@ $data=mysqli_query($conn,"SELECT * FROM food_details");
   }
   img 
   {
-    height: 130px;
-    width: 200px;
+    height: 150px;
+    width: 150px;
   }
   body{
     background-image: url("image/b3ac935f556fe254403a688d36fff3c0.jpg");
@@ -101,17 +101,7 @@ $data=mysqli_query($conn,"SELECT * FROM food_details");
       <!-- <a href="index.php" class="logo me-auto me-lg-0"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
 
       <nav id="navbar" class="hai navbar order-last order-lg-0">
-        <ul>
-          <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
-          <li><a class="nav-link scrollto" href="#about">About</a></li>
-          <li><a class="nav-link scrollto" href="#menu">Menu</a></li>
-          <li><a class="nav-link scrollto" href="#specials">Specials</a></li>
-          <li><a class="nav-link scrollto" href="#events">Events</a></li>
-          <li><a class="nav-link scrollto" href="#chefs">Chefs</a></li>
-          <li><a class="nav-link scrollto" href="#gallery">Gallery</a></li>
-          
-          <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
-        </ul>
+        
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->
       <a href="logout.php" class="book-a-table-btn scrollto d-none d-lg-flex">Logout</a>
@@ -135,6 +125,7 @@ $data=mysqli_query($conn,"SELECT * FROM food_details");
 <div class=" new card mt-5" style="width: 18rem;">
   <img src="./image/<?php echo $row['photo'];?>" class="card-img-top mt-5" alt="...">
   <div class="card-body">
+  
     <strong>Food Name:</strong>
     <h5 class="card-title"><?php echo $row['food_name'];?></h5>
     <strong>Ingredients</strong>
@@ -143,7 +134,8 @@ $data=mysqli_query($conn,"SELECT * FROM food_details");
     <p class="card-text"><?php echo $row['preparationtime'];?></p>
     <strong>Price</strong>
     <p class="card-text"><?php echo $row['price'];?></p>
-    <a href="emp_remove.php?id=<?php echo $row['food_id'];?>" class="btn btn-primary">Remove from list</a>
+
+    
    
   </div>
 </div>

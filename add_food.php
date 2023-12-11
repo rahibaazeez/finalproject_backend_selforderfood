@@ -3,6 +3,7 @@
 include "connection.php";
 if(isset($_POST['submit'])){
   $foodname=$_POST['foodname'];
+  $category=$_POST['category'];
   $ingredients=$_POST['ingredients'];
   $preparationtime=$_POST['preparationtime'];
   $price=$_POST['price'];
@@ -21,7 +22,7 @@ if(isset($_POST['submit'])){
     }else{
         move_uploaded_file($tempname,$folder);
     }
-  $sql=mysqli_query($conn,"INSERT INTO food_details(photo,food_name,ingredients,preparationtime,price) VALUES('$image','$foodname','$ingredients','$preparationtime','$price')");
+  $sql=mysqli_query($conn,"INSERT INTO food_details(photo,food_name,category,ingredients,preparationtime,price) VALUES('$image','$foodname','$category','$ingredients','$preparationtime','$price')");
   if($sql)
   {
       echo'<script> alert("Added successfully");
@@ -132,6 +133,16 @@ if(isset($_POST['submit'])){
                         <div class="mb-3">
                           <label for="" class="form-label">Food Name</label>
                           <input type="text" name="foodname" class="form-control" >
+                          <label for="" class="form-label" class="form-control">Category</label>
+                          <div class="mb-3">
+                           <select name="category" id="">
+                            <option value="">Choose</option>
+                            <option value="pizza">Pizza</option>
+                            <option value="burger">Burger</option>
+                            <option value="drinks">Drinks</option>
+                           </select>
+                          </div>
+                       
                           
                         </div>
                         <div class="mb-3">

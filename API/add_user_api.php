@@ -1,4 +1,5 @@
 <?php
+header("Content-Type: application/json");
 $conn=mysqli_connect("localhost","root","","self_orderfood");
 if(mysqli_connect_errno()){
     die("Connection Unsucessful");
@@ -22,7 +23,7 @@ if($uploadOk==0){
 }else{
     move_uploaded_file($tempname,$folder);
 }
-$sql=mysqli_query($conn,"INSERT INTO user_registration(Photo,Name,Email,Phonenumber) VALUES('$image','$name','$email','$phone')");
+$sql=mysqli_query($conn,"INSERT INTO user_registration(Photo,Name,Email,Phonenumber,Password) VALUES('$image','$name','$email','$phone','$password')");
 $data=mysqli_insert_id($conn);
 $sql=mysqli_query($conn,"INSERT INTO login(login_id,Email,Password) VALUES('$data','$email','$password')");
 if($sql){

@@ -60,7 +60,7 @@ $data=mysqli_query($conn,"SELECT * FROM food_details");
   }
   .new
   {
-    background-image: url("image/images2.jpeg");
+    background-image: url("image/circle_background.avif");
     color: white;
   }
   nav 
@@ -72,8 +72,8 @@ $data=mysqli_query($conn,"SELECT * FROM food_details");
   }
   img 
   {
-    height: 130px;
-    width: 200px;
+    height: 180px;
+    /* width: 100px; */
   }
   body{
     background-image: url("image/b3ac935f556fe254403a688d36fff3c0.jpg");
@@ -132,7 +132,7 @@ $data=mysqli_query($conn,"SELECT * FROM food_details");
   <div class="container">
   <div class="row">
 
-<div class=" new card mt-5" style="width: 18rem;">
+<div class=" new card mt-5" style="width: 20rem;">
   <img src="./image/<?php echo $row['photo'];?>" class="card-img-top mt-5" alt="...">
   <div class="card-body">
     <strong>Food Name:</strong>
